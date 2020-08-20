@@ -1,6 +1,15 @@
 <?php
+namespace PHPMailer\PHPMailer;
 
-function sendmail($objet, $contenu, $destinataire)
+require 'vendor/PHPMailer/src/Exception.php';
+require  'vendor/PHPMailer/src/PHPMailer.php';
+require  'vendor/PHPMailer/src/SMTP.php';
+
+
+use vendor\PHPMailer\src\PHPMailer;
+use vendor\PHPmailer\src\Exeption;
+
+function sendMail($objet, $contenu, $destinataire)
 {
 // on crée une nouvelle instance de la classe
     $mail = new PHPMailer(true);

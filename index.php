@@ -1,14 +1,12 @@
 <?php
 require_once 'component/HeaderComponent.php';
 require_once 'component/MainComponent.php';
-require 'vendor/PHPMailer/src/Exception.php';
-require  'vendor/PHPMailer/src/PHPMailer.php';
-require  'vendor/PHPMailer/src/SMTP.php';
+require_once 'component/contact-form/SendMail.php';
 
 use Component\HeaderComponent;
 use Component\MainComponent;
-use vendor\PHPMailer\PHPMailer;
-use vendor\PHPmailer\Exeption;
+use MailEngine\SendMail;
+
 
 $header = new HeaderComponent();
 $main = new MainComponent();
@@ -16,8 +14,14 @@ $main = new MainComponent();
 $header ->render();
 $main ->render();
 
-$dest = $_POST['user_mail'];
-$objet = $_POST['object_message'];
-$contenu = $_POST['user_message'];
+if (isset($_POST['formulaire'])){
+    $dest = $_POST['user_mail'];
+    $objet = $_POST['object_message'];
+    $contenu = $_POST['user_message'];
 
-sendmail($objet, $contenu, $dest);
+    $mailNow = new SendMail();
+    $mailNow ->sendMail($objet, $contenu, $dest);
+
+}
+
+
