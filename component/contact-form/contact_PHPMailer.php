@@ -17,16 +17,7 @@ function sendMail($objet, $contenu, $destinataire)
     try {
         /* DONNEES SERVEUR */
         #####################
-        $mail->setLanguage('fr', '../PHPMailer/language/');     // pour avoir les messages d'erreur en FR
-        $mail->SMTPDebug = 0;                                   // en production (sinon "2")
-        // $mail->SMTPDebug = 2;                                // décommenter en mode débug
-        $mail->isSMTP();                                        // envoi avec le SMTP du serveur
-        $mail->Host = 'smtp du serveur';                        // serveur SMTP
-        $mail->SMTPAuth = true;                                 // le serveur SMTP nécessite une authentification ("false" sinon)
-        $mail->Username = 'davy.blavette@2isa.com';             // login SMTP
-        $mail->Password = 'kn2WvLmM7bNU0BE6';                   // Mot de passe SMTP
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;     // encodage des données TLS (ou juste 'tls') > "Aucun chiffrement des données"; sinon PHPMailer::ENCRYPTION_SMTPS (ou juste 'ssl')
-        $mail->Port = 587;                                      // port TCP (ou 25, ou 465...)
+       //cut//
 
         /* DONNEES DESTINATAIRES */
         ##########################
